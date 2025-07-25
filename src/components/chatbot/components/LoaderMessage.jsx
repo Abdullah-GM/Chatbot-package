@@ -1,8 +1,16 @@
-import React from 'react';
-import '../Chatbot.css';
+import "../Chatbot.css";
 
-const LoaderMessage = () => {
-  return <div className="chatbot-loading">Agent is typing...</div>;
-};
+function LoaderMessage() {
+  return (
+    <div className="skeleton-stacked-loader">
+      {/* <div className="skeleton-bar bar1" /> */}
+      <div className="skeleton-bar bar2" />
+      <div className="skeleton-bar bar3" />
+      <div className="skeleton-bar bar4" />
+      <div className="skeleton-bar bar5" />
+      <div className="skeleton-bar bar6" />
+    </div>
+  );
+}
 
 export default LoaderMessage;

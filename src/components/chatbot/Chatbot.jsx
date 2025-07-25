@@ -7,7 +7,7 @@ import {
   ErrorMessage,
 } from '../../components/chatbot/components';
 
-const Chatbot = ({ messages = [], loading = false, onSend, error }) => {
+const Chatbot = ({ messages = [], loading = false, onSend, error, errorText = null }) => {
   const [inputText, setInputText] = useState('');
 
   const handleSubmit = (e) => {
@@ -27,7 +27,7 @@ const Chatbot = ({ messages = [], loading = false, onSend, error }) => {
           return null;
         })}
         {loading && <LoaderMessage />}
-        {error && <ErrorMessage text={error} />}
+        {error && <ErrorMessage errorText={errorText}/>}
       </div>
 
       <form className="chatbot-input-area" onSubmit={handleSubmit}>

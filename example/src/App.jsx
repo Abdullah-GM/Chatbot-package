@@ -14,7 +14,7 @@ const App = () => {
     setTimeout(() => {
       setMessages((prev) => [...prev, { role: 'agent', text: 'Got it!' }]);
       setLoading(false);
-    }, 1000);
+    }, 4000);
   };
 
   return (
