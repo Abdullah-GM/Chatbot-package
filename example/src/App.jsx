@@ -3,16 +3,16 @@ import Chatbot from '../../src';
 
 const App = () => {
   const [messages, setMessages] = useState([
-    { role: 'user', text: 'Hi!' },
-    { role: 'agent', text: 'Hello, how can I help?' },
+    { sender: 'user', text: 'Hi!' },
+    { sender: 'agent', text: 'Hello, how can I help?' },
   ]);
   const [loading, setLoading] = useState(false);
 
   const handleSend = (text) => {
-    setMessages((prev) => [...prev, { role: 'user', text }]);
+    setMessages((prev) => [...prev, { sender: 'user', text }]);
     setLoading(true);
     setTimeout(() => {
-      setMessages((prev) => [...prev, { role: 'agent', text: 'Got it!' }]);
+      setMessages((prev) => [...prev, { sender: 'agent', text: 'Got it!' }]);
       setLoading(false);
     }, 4000);
   };

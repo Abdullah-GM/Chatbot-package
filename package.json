@@ -1,6 +1,6 @@
 {
   "name": "talkkai-chatbot-component",
-  "version": "1.0.8",
+  "version": "1.0.16",
   "description": "Made with create-react-library",
   "author": "Shaikh-Abdullah",
   "license": "MIT",
@@ -12,8 +12,9 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs --css inline --no-css-modules",
+    "build": "microbundle-crl --no-compress --format modern,cjs --css inline --no-css-modules && npm run copy-assets",
     "start": "microbundle-crl watch --no-compress --format modern,cjs --css inline --no-css-modules",
+    "copy-assets": "cp -R src/assets dist/",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
@@ -51,6 +52,11 @@
   "files": [
     "dist",
     "dist/index.css",
-    "src/assets/images/arrow-icon.png"
-  ]
+    "src/assets/images/arrow-icon.png",
+    "dist/assets"
+  ],
+  "dependencies": {
+    "dompurify": "^3.2.6",
+    "markdown-it": "^14.1.0"
+  }
 }
