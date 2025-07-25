@@ -1,3 +1,4 @@
+import React from "react";
 import "../Chatbot.css";
 
 function LoaderMessage() {
