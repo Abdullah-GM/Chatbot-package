@@ -19,7 +19,6 @@ const App = () => {
 
   return (
     <div style={{ padding: 20 }}>
-      <h2>Chatbot Demo</h2>
       <Chatbot messages={messages} loading={loading} onSend={handleSend} />
     </div>
   );
