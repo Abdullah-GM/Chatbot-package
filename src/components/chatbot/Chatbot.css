@@ -10,7 +10,6 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   width: 100%;
-  max-width: 500px;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -138,3 +137,71 @@
 }
 
 /* User Message End */
+.skeleton-stacked-loader {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.skeleton-stacked-loader .skeleton-bar {
+  position: relative;
+  width: 100%;
+  background-color: transparent;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.skeleton-stacked-loader .bar1 {
+  height: 25px;
+  margin-bottom: 40px;
+}
+
+.skeleton-stacked-loader .bar2,
+.skeleton-stacked-loader .bar3,
+.skeleton-stacked-loader .bar4,
+.skeleton-stacked-loader .bar5,
+.skeleton-stacked-loader .bar6,
+.skeleton-stacked-loader .bar7 {
+  height: 10px;
+}
+
+.skeleton-stacked-loader .skeleton-bar::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  background-color: #cccccc;
+  border-radius: 4px;
+  animation: slide-right 1s forwards;
+}
+
+.skeleton-stacked-loader .bar1::before { animation-delay: 0s; }
+.skeleton-stacked-loader .bar2::before { animation-delay: 1s; }
+.skeleton-stacked-loader .bar3::before { animation-delay: 2s; }
+.skeleton-stacked-loader .bar4::before { animation-delay: 3s; }
+.skeleton-stacked-loader .bar5::before { animation-delay: 4s; }
+.skeleton-stacked-loader .bar6::before { animation-delay: 5s; }
+.skeleton-stacked-loader .bar7::before { animation-delay: 6s; }
+
+@keyframes slide-right {
+  0% {
+      width: 0%;
+  }
+  100% {
+      width: 100%;
+  }
+}
+/* Loader Message End */
+
+/* Error Message Start */
+
+.error-msg-wrp {
+background-color: #e726260d;
+padding: 14px;
+font-size: 13px;
+border-radius: 4px;
+max-width: 98%;
+border: 1px solid #c91313;
+}

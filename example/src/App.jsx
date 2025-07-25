@@ -14,11 +14,11 @@ const App = () => {
     setTimeout(() => {
       setMessages((prev) => [...prev, { role: 'agent', text: 'Got it!' }]);
       setLoading(false);
-    }, 1000);
+    }, 4000);
   };
 
   return (
-    <div style={{ padding: 20 }}>
+    <div style={{ padding: 20, height: '500px' }}>
       <Chatbot messages={messages} loading={loading} onSend={handleSend} />
     </div>
   );

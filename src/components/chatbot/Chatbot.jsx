@@ -1,14 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import './Chatbot.css'
 import {
   UserMessage,
   AgentMessage,
   LoaderMessage,
-  ErrorMessage
-} from '../../components/chatbot/components'
+  ErrorMessage,
+} from '../../components/chatbot/components';
 import ArrowImg from '../../../assets/images/arrow-icon.png'
-const Chatbot = ({ messages = [], loading = false, onSend, error }) => {
-  const [inputText, setInputText] = useState('')
+const Chatbot = ({ messages = [], loading = false, onSend, error, errorText = null }) => {
+  const [inputText, setInputText] = useState('');
+  const bottomRef = useRef(null);
+
+  useEffect(() => {
+    if (bottomRef.current) {
+      bottomRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages, loading]);
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -29,18 +36,9 @@ const Chatbot = ({ messages = [], loading = false, onSend, error }) => {
           return null
         })}
         {loading && <LoaderMessage />}
-        {error && <ErrorMessage text={error} />}
+        {error && <ErrorMessage errorText={errorText}/>}
       </div>
 
-      {/* <form className="chatbot-input-area" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={inputText}
-          onChange={(e) => setInputText(e.target.value)}
-          placeholder="Type your message..."
-        />
-        <button type="submit">Send</button>
-      </form> */}
 
       <form onSubmit={handleSubmit}>
         <div className="application-chatbot-input-container">
@@ -56,6 +54,7 @@ const Chatbot = ({ messages = [], loading = false, onSend, error }) => {
           </button>
         </div>
       </form>
+      <div ref={bottomRef} />
     </div>
   )
 }
