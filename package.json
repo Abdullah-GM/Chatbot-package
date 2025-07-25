@@ -1,6 +1,6 @@
 {
   "name": "talkkai-chatbot-component",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Made with create-react-library",
   "author": "Shaikh-Abdullah",
   "license": "MIT",
@@ -50,6 +50,7 @@
   },
   "files": [
     "dist",
-    "dist/index.css"
+    "dist/index.css",
+    "src/assets/images/arrow-icon.png"
   ]
 }

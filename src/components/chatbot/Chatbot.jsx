@@ -6,7 +6,7 @@ import {
   LoaderMessage,
   ErrorMessage,
 } from '../../components/chatbot/components';
-import ArrowImg from '../../../assets/images/arrow-icon.png'
+import ArrowImg from '../../assets/images/arrow-icon.png'
 const Chatbot = ({ messages = [], loading = false, onSend, error, errorText = null }) => {
   const [inputText, setInputText] = useState('');
   const bottomRef = useRef(null);
