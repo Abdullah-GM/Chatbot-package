@@ -37,6 +37,7 @@ const Chatbot = ({ messages = [], loading = false, onSend, error, errorText = nu
         })}
         {loading && <LoaderMessage />}
         {error && <ErrorMessage errorText={errorText}/>}
+        <div ref={bottomRef} />
       </div>
 
 
@@ -54,7 +55,6 @@ const Chatbot = ({ messages = [], loading = false, onSend, error, errorText = nu
           </button>
         </div>
       </form>
-      <div ref={bottomRef} />
     </div>
   )
 }
